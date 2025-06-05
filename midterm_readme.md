@@ -48,7 +48,7 @@
 
 - [x] Auto Redirect when **Login Success** (10pts)
 
-- [] Create Todo (Connects to API) (10pts)
+- [x] Create Todo (Connects to API) (10pts)
 
 - [] Can submit form with **"Enter Key"** (10pts)
 

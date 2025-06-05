@@ -104,7 +104,6 @@ function MyToDo() {
 
               <button
                 onClick={() => handleDelete(todo.id)}
-                // onClick={() => setTodos(todos.filter((t) => t.id !== todo.id))}
                 className="flex items-center bg-red-500 px-2 rounded text-white"
               >
                 X
