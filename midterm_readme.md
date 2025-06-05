@@ -6,47 +6,47 @@
 
 - [x] Create Project with Vite (5pts)
 
-- [] Install packages to the project (5pts)
+- [x] Install packages to the project (5pts)
 
-- [] Setup Folder Structures (5pts)
+- [x] Setup Folder Structures (5pts)
 
-- [] Pick some CSS Framework (5pts)
+- [x] Pick some CSS Framework (5pts)
 
 ### Part-2 : Build UI with React Component (35pts)
 
 ### 1. Login Page
 
-- [] Inputs (5pts)
+- [x] Inputs (5pts)
 
-- [] Button to Submit (5pts)
+- [x] Button to Submit (5pts)
 
 ### 2. Todo Page
 
-- [] Inputs (2pts)
+- [x] Inputs (2pts)
 
 - [] Button to Edit (2pts)
 
-- [] Button to Submit (2pts)
+- [x] Button to Submit (2pts)
 
-- [] Button to Delete (2pts)
+- [x] Button to Delete (2pts)
 
-- [] CheckBox (2pts)
+- [x] CheckBox (2pts)
 
 ### 3.Naming and Structures
 
-- [] Good Naming for Components (5pts)
+- [x] Good Naming for Components (5pts)
 
-- [] Readable Code (easy to read): Good components seperation(10pts)
+- [x] Readable Code (easy to read): Good components seperation(10pts)
 
 ### Part-3 : Feature and Logic (95pts)
 
-- [] Using React Router (10pts)
+- [x] Using React Router (10pts)
 
-- [] Login (Connects to API) (10pts)
+- [x] Login (Connects to API) (10pts)
 
 - [] Get my Todo (10pts)
 
-- [] Auto Redirect when **Login Success** (10pts)
+- [x] Auto Redirect when **Login Success** (10pts)
 
 - [] Create Todo (Connects to API) (10pts)
 
@@ -58,15 +58,15 @@
 
 - [] Input checkbox could change the data (Connect to API) (10pts)
 
-- [] Good Naming for Functions (5pts)
+- [x] Good Naming for Functions (5pts)
 
 ### Part-3 : Bonus (50pts)
 
-- [] Show validation in Login Page (5pts)
+- [x] Show validation in Login Page (5pts)
 
 - [] Show validation in Todo Page (5pts)
 
-- [] UI Feature Register (5pts)
+- [x] UI Feature Register (5pts)
 
 - [] Register Feature Connects to API (5pts)
 
@@ -78,7 +78,7 @@
 
 - [] Show **Created date** when create todo (5pts)
 
-- [] Setup Well-organized Folder Structures (components, routes, pages, utils, apis) (5pts)
+- [x] Setup Well-organized Folder Structures (components, routes, pages, utils, apis) (5pts)
 
 # Can and Can't
 
