@@ -2,7 +2,7 @@ import { BookHeart } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import useToDoStore from "../stores/todoStore";
 import { toast } from "react-toastify";
-import { ApiDeleteToDo } from "../apis/todoApi";
+import { ApiDeleteToDo, ApiEditToDo } from "../apis/todoApi";
 
 function MyToDo() {
   const initialInput = {
@@ -15,14 +15,12 @@ function MyToDo() {
   const actionCreateToDo = useToDoStore((state) => state.actionCreateToDo);
   const [isEdit, setIsEdit] = useState(false);
   const actionGetTodo = useToDoStore((state) => state.actionGetTodo);
-  const [check,setCheck] = useState(false)
 
   useEffect(() => {
-    actionGetTodo()
+    actionGetTodo();
   }, []);
 
   const addTodo = async (input) => {
-
     try {
       if (input.taskName.trim()) {
         await actionCreateToDo(input);
@@ -43,15 +41,22 @@ function MyToDo() {
     }
   };
 
-  const handleCheck = () => {
-    setCheck(!check)
-  }
+  const handleCheck = async (id,completed) => {
+    const newStatus = !completed;
+    try {
+      await ApiEditToDo(id,newStatus);
+      await actionGetTodo();
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleChange = (e) => {
     console.log(input);
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
+  console.log(ToDos);
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-slate-500 to-slate-800">
       <div className="bg-white shadow-lg rounded-2xl p-12">
@@ -71,7 +76,6 @@ function MyToDo() {
 
           <button
             onClick={() => addTodo(input)}
-            
             className="bg-slate-600 text-white rounded-r-lg px-4 py-2"
           >
             Add
@@ -86,28 +90,20 @@ function MyToDo() {
             >
               <input
                 type="checkbox"
-                checked={handleCheck}
-                onChange={() =>
-                  setTodos(
-                    todos.map((t) =>
-                      t.id === todo.id ? { ...t, completed: !t.completed } : t
-                    )
-                  )
-                }
+                checked={todo.completed}
+                onChange={() => handleCheck(todo.id,todo.completed)}
               />
 
               <span
                 className={`flex-grow ${
-                  todo.completed
-                    ? "line-through text-gray-500"
-                    : "text-gray-800"
+                  todo.check ? "line-through text-gray-500" : "text-gray-800"
                 }`}
               >
                 {todo.taskName}
               </span>
 
               <button
-                onClick={()=>handleDelete(todo.id)}
+                onClick={() => handleDelete(todo.id)}
                 // onClick={() => setTodos(todos.filter((t) => t.id !== todo.id))}
                 className="flex items-center bg-red-500 px-2 rounded text-white"
               >

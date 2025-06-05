@@ -22,6 +22,6 @@ export const ApiDeleteToDo = async (id) => {
   await axios.delete(`${baseURL}/api/V1/todos/${id}/43`);
 };
 
-export const fetchUpdateToDo = async (id, data) => {
-  await axios.patch(`${baseURL}/${id}`, data);
+export const ApiEditToDo = async (id, newStatus) => {
+  await axios.patch(`${baseURL}/api/V2/todos/${id}`, {completed : newStatus});
 };
